@@ -1,6 +1,7 @@
 import java.io.Serializable;
+import java.util.Comparator;
 
-public class Vertex implements Serializable {
+public class Vertex implements Serializable, java.lang.Comparable<Vertex>, Comparator<Vertex> {
     private final double x;
     private final double y;
     
@@ -37,5 +38,15 @@ public class Vertex implements Serializable {
 
     public void set_height(Double height) {
         this.height = height;
+    }
+
+    @Override
+    public int compareTo(Vertex arg0) {
+        return this.get_angle().compareTo(arg0.get_angle());
+    }
+
+    @Override
+    public int compare(Vertex arg0, Vertex arg1) {
+        return arg0.compareTo(arg1);
     }
 }

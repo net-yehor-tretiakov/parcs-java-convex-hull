@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Random;
 import java.util.Vector;
 
@@ -116,5 +117,7 @@ public class TaskRunner {
         }
 
         angle_task.end();
+
+        Collections.sort(vertices);
     }
 }
