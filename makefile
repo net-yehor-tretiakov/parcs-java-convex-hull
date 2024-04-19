@@ -20,8 +20,8 @@ out/AngleComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
 
 out/HullComputing.jar: out/parcs.jar src/HullComputing.java src/Vertex.java
 	@javac -cp out/parcs.jar src/HullComputing.java src/Vertex.java
-	@jar cf out/HullComputing.jar -C src HullComputing.class -C src Vertex.class
-	@rm -f src/HullComputing.class src/Vertex.class
+	@jar cf out/HullComputing.jar -C src HullComputing.class -C src InnerHullComputerVertex.class -C src Vertex.class
+	@rm -f src/HullComputing.class src/InnerHullComputerVertex.class src/Vertex.class
 
 build: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputing.jar 
 
