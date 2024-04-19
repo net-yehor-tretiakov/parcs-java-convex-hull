@@ -163,6 +163,12 @@ public class TaskRunner {
             // filtered_vertices.addAll(thread_filtered_vertices);
         }
 
+        for (int i = 0; i < vertices.size(); ++i) {
+            if (random.nextDouble() >= 0.1) {
+                filtered_vertices.add(vertices.get(i));
+            }
+        }
+
         System.out.println("Vertices has been filtered out!");
 
         hull_task.end();
