@@ -25,5 +25,5 @@ out/HullComputer.jar: out/parcs.jar src/HullComputer.java src/Vertex.java src/In
 
 build: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputer.jar 
 
-run: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar
+run: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputer.jar
 	@cd out && java -cp 'parcs.jar:TaskRunner.jar' TaskRunner
