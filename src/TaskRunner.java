@@ -11,7 +11,7 @@ public class TaskRunner {
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) throws Exception {
-        final int AMOUNT_OF_POINTS = 100000;
+        final int AMOUNT_OF_POINTS = 100;
         
         final int FIELD_X_LEFT_BORDER = -100;
         final int FIELD_X_RIGHT_BORDER = 100;
