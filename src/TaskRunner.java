@@ -126,9 +126,9 @@ public class TaskRunner {
         // angle_task.end();
 
         //Sorting vertices depending on its polar angle
-        Collections.sort(vertices);
+        // Collections.sort(vertices);
 
-        System.out.println("Vertices has been sorted by angle!");
+        // System.out.println("Vertices has been sorted by angle!");
 
 
         // Sector hull computing
