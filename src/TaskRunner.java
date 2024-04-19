@@ -158,9 +158,9 @@ public class TaskRunner {
         }
 
         for (int i = 0; i < AMOUNT_OF_SECTORS; ++i) {
-            final Vector<Vertex> thread_filtered_vertices = (Vector<Vertex>)channels[i].readObject();
+            // final Vector<Vertex> thread_filtered_vertices = (Vector<Vertex>)channels[i].readObject();
             
-            filtered_vertices.addAll(thread_filtered_vertices);
+            // filtered_vertices.addAll(thread_filtered_vertices);
         }
 
         System.out.println("Vertices has been filtered out!");
