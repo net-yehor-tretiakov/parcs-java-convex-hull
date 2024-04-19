@@ -13,7 +13,7 @@ out/MassComputer.jar: out/parcs.jar src/MassComputer.java src/Vertex.java
 	@jar cf out/MassComputer.jar -C src MassComputer.class -C src Vertex.class
 	@rm -f src/MassComputer.class src/Vertex.class
 
-out/MassComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
+out/AngleComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
 	@javac -cp out/parcs.jar src/AngleComputer.java src/Vertex.java
 	@jar cf out/AngleComputer.jar -C src AngleComputer.class -C src Vertex.class
 	@rm -f src/AngleComputer.class src/Vertex.class
