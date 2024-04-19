@@ -1,7 +1,7 @@
 all: run
 
 clean:
-	rm -f out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar
+	rm -f out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputer.jar
 
 out/TaskRunner.jar: out/parcs.jar src/TaskRunner.java src/Vertex.java
 	@javac -cp out/parcs.jar src/TaskRunner.java src/Vertex.java
