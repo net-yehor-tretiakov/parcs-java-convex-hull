@@ -11,6 +11,7 @@ public class HullComputer implements AM {
     @SuppressWarnings("unchecked")
     @Override
     public void run(AMInfo info) {
+        System.out.println("Hull");
         Vector<Vertex> filtered_vertices = new Vector<Vertex>();
 
         final Vertex center = (Vertex)info.parent.readObject();
