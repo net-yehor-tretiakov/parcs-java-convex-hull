@@ -5,11 +5,10 @@ import parcs.AMInfo;
 
 public class AngleComputer implements AM {
 
-    @Override
     @SuppressWarnings("unchecked")
+    @Override
     public void run(AMInfo info) {
         final Vertex center = (Vertex)info.parent.readObject();
-
         final Vector<Vertex> vertices = (Vector<Vertex>)info.parent.readObject();
 
         for (int i = 0; i < vertices.size(); i++) {

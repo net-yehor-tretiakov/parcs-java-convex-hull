@@ -18,7 +18,12 @@ out/AngleComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
 	@jar cf out/AngleComputer.jar -C src AngleComputer.class -C src Vertex.class
 	@rm -f src/AngleComputer.class src/Vertex.class
 
-build: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar
+out/HullComputer.jar: out/parcs.jar src/HullComputer.java src/Vertex.java
+	@javac -cp out/parcs.jar src/HullComputer.java src/Vertex.java
+	@jar cf out/HullComputer.jar -C src HullComputer.class -C src Vertex.class
+	@rm -f src/HullComputer.class src/Vertex.class
+
+build: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputer.jar 
 
 run: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar
 	@cd out && java -cp 'parcs.jar:TaskRunner.jar' TaskRunner

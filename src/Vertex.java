@@ -6,14 +6,12 @@ public class Vertex implements Serializable, java.lang.Comparable<Vertex>, Compa
     private final double y;
     
     private Double angle;
-    private Double height;
 
     public Vertex(double x, double y) {
         this.x = x;
         this.y = y;
 
         this.angle = null;
-        this.height = null;
     }
 
     public double get_x() {
@@ -30,14 +28,6 @@ public class Vertex implements Serializable, java.lang.Comparable<Vertex>, Compa
 
     public void set_angle(Double angle) {
         this.angle = angle;
-    }
-
-    public Double get_height() {
-        return this.height;
-    }
-
-    public void set_height(Double height) {
-        this.height = height;
     }
 
     @Override
