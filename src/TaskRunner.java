@@ -134,11 +134,11 @@ public class TaskRunner {
         // Sector hull computing
         final int AMOUNT_OF_SECTORS = AMOUNT_OF_POINTS / AMOUNT_OF_POINTS_IN_SECTOR;
 
-        task hull_task = new task();
+        // task hull_task = new task();
         
-        hull_task.addJarFile("HullComputing.jar");
+        // hull_task.addJarFile("HullComputing.jar");
 
-        info = new AMInfo(hull_task, null);
+        // info = new AMInfo(hull_task, null);
 
         points = new point[AMOUNT_OF_SECTORS];
         channels = new channel[AMOUNT_OF_SECTORS];
@@ -150,8 +150,8 @@ public class TaskRunner {
                 vertices_for_thread.add(vertices.get(i * AMOUNT_OF_POINTS_IN_SECTOR + j));
             }
 
-            points[i] = info.createPoint();
-            channels[i] = points[i].createChannel();
+            // points[i] = info.createPoint();
+            // channels[i] = points[i].createChannel();
             // points[i].execute("HullComputing");
             // channels[i].write(center_of_mass);
             // channels[i].write(vertices_for_thread);
@@ -171,7 +171,7 @@ public class TaskRunner {
 
         System.out.println("Vertices has been filtered out!");
 
-        hull_task.end();
+        // hull_task.end();
 
         for (int i = 0; i < filtered_vertices.size(); i++) {
             System.out.println("Hull vertex [" + i + "] is: (" + 
