@@ -169,7 +169,7 @@ public class TaskRunner {
         hull_task.end();
 
         for (int i = 0; i < filtered_vertices.size(); i++) {
-            System.out.println("Hull vertex [" + i + "] is: (" + 
+            System.out.println("Hull vertices [" + i + "] is: (" + 
                 filtered_vertices.get(i).get_x() + ", " + 
                 filtered_vertices.get(i).get_y() + ")"
             );

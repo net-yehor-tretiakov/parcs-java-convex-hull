@@ -18,7 +18,7 @@ public class MassComputer implements AM {
             y_sum += vertices.get(i).get_y();
         }
 
-        System.out.println("Sum of the vertexis: [" + x_sum + ", " + y_sum + "]");
+        System.out.println("Sum of the vertices: [" + x_sum + ", " + y_sum + "]");
         
         info.parent.write(x_sum);
         info.parent.write(y_sum);
