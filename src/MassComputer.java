@@ -7,6 +7,7 @@ public class MassComputer implements AM {
 
     @Override
     public void run(AMInfo info) {
+        @SuppressWarnings("unchecked")
         final Vector<Vertex> vertices = (Vector<Vertex>)info.parent.readObject();
         
         double x_sum = 0;
