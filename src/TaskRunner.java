@@ -164,7 +164,7 @@ public class TaskRunner {
         }
 
         for (int i = 0; i < vertices.size(); ++i) {
-            if (random.nextDouble() >= 0.1) {
+            if (Math.sqrt((vertices.get(i).get_x() - center_of_mass.get_x()) * (vertices.get(i).get_x() - center_of_mass.get_x()) + (vertices.get(i).get_y() - center_of_mass.get_y()) * (vertices.get(i).get_y() - center_of_mass.get_y())) >= (FIELD_X_RIGHT_BORDER - FIELD_X_LEFT_BORDER) / 2) {
                 filtered_vertices.add(vertices.get(i));
             }
         }
