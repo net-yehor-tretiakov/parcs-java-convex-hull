@@ -18,6 +18,9 @@ out/AngleComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
 	@jar cf out/AngleComputer.jar -C src AngleComputer.class -C src Vertex.class
 	@rm -f src/AngleComputer.class src/Vertex.class
 
+InnerHullComputerVertex.class: src/HullComputing.java
+	javac -d . -classpath . src/HullComputing.java
+
 out/HullComputing.jar: out/parcs.jar src/HullComputing.java src/Vertex.java
 	@javac -cp out/parcs.jar src/HullComputing.java src/Vertex.java
 	@jar cf out/HullComputing.jar -C src HullComputing.class -C src InnerHullComputerVertex.class -C src Vertex.class
