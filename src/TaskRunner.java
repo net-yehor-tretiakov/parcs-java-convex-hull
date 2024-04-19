@@ -81,54 +81,54 @@ public class TaskRunner {
 
 
         // Angle computing
-        // task angle_task = new task();
+        task angle_task = new task();
         
-        // angle_task.addJarFile("AngleComputer.jar");
+        angle_task.addJarFile("AngleComputer.jar");
 
-        // info = new AMInfo(angle_task, null);
+        info = new AMInfo(angle_task, null);
 
-        // points = new point[NUM_OF_THREADS_FOR_PRECOMPUTING];
-        // channels = new channel[NUM_OF_THREADS_FOR_PRECOMPUTING];
+        points = new point[NUM_OF_THREADS_FOR_PRECOMPUTING];
+        channels = new channel[NUM_OF_THREADS_FOR_PRECOMPUTING];
 
-        // for (int i = 0; i < NUM_OF_THREADS_FOR_PRECOMPUTING; i++) {
-        //     Vector<Vertex> vertices_for_thread = new Vector<Vertex>(AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING);
+        for (int i = 0; i < NUM_OF_THREADS_FOR_PRECOMPUTING; i++) {
+            Vector<Vertex> vertices_for_thread = new Vector<Vertex>(AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING);
             
-        //     for (int j = 0; j < AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING; j++) {
-        //         vertices_for_thread.add(vertices.get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j));
-        //     }
+            for (int j = 0; j < AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING; j++) {
+                vertices_for_thread.add(vertices.get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j));
+            }
 
-        //     points[i] = info.createPoint();
-        //     channels[i] = points[i].createChannel();
-        //     points[i].execute("AngleComputer");
-        //     channels[i].write(center_of_mass);
-        //     channels[i].write(vertices_for_thread);
-        // }
+            points[i] = info.createPoint();
+            channels[i] = points[i].createChannel();
+            points[i].execute("AngleComputer");
+            channels[i].write(center_of_mass);
+            channels[i].write(vertices_for_thread);
+        }
 
-        // for (int i = 0; i < NUM_OF_THREADS_FOR_PRECOMPUTING; ++i) {
-        //     final Vector<Vertex> angled_vertices = (Vector<Vertex>)channels[i].readObject();
+        for (int i = 0; i < NUM_OF_THREADS_FOR_PRECOMPUTING; ++i) {
+            final Vector<Vertex> angled_vertices = (Vector<Vertex>)channels[i].readObject();
 
-        //     for (int j = 0; j < AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING; j++) {
-        //         vertices
-        //             .get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j)
-        //             .set_angle(
-        //                 angled_vertices
-        //                     .get(j)
-        //                     .get_angle()
-        //             );
+            for (int j = 0; j < AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING; j++) {
+                vertices
+                    .get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j)
+                    .set_angle(
+                        angled_vertices
+                            .get(j)
+                            .get_angle()
+                    );
 
-        //         // System.out.println("Angle for computing module [" + i + ", " + j + "] is: "
-        //         //     + vertices.get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j).get_angle());
-        //     }
-        // }
+                // System.out.println("Angle for computing module [" + i + ", " + j + "] is: "
+                //     + vertices.get(i * AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING + j).get_angle());
+            }
+        }
 
-        // System.out.println("Vertices polar angles has been computed!");
+        System.out.println("Vertices polar angles has been computed!");
 
-        // angle_task.end();
+        angle_task.end();
 
         //Sorting vertices depending on its polar angle
-        // Collections.sort(vertices);
+        Collections.sort(vertices);
 
-        // System.out.println("Vertices has been sorted by angle!");
+        System.out.println("Vertices has been sorted by angle!");
 
 
         // Sector hull computing

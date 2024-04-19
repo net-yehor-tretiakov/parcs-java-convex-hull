@@ -1,7 +1,7 @@
 all: run
 
 clean:
-	rm -f out/TaskRunner.jar out/MassComputer.jar
+	rm -f out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar
 
 out/TaskRunner.jar: out/parcs.jar src/TaskRunner.java src/Vertex.java
 	@javac -cp out/parcs.jar src/TaskRunner.java src/Vertex.java
@@ -20,7 +20,7 @@ out/AngleComputer.jar: out/parcs.jar src/AngleComputer.java src/Vertex.java
 
 out/HullComputer.jar: out/parcs.jar src/HullComputer.java src/Vertex.java
 	@javac -cp out/parcs.jar src/HullComputer.java src/Vertex.java
-	@jar cf out/HullComputer.jar -C src HullComputer.class -C src Vertex.class 
+	@jar cf out/HullComputer.jar -C src HullComputer.class -C src Vertex.class
 	@rm -f src/HullComputer.class src/Vertex.class
 
 build: out/TaskRunner.jar out/MassComputer.jar out/AngleComputer.jar out/HullComputer.jar 
