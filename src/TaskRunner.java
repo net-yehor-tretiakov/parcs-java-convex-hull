@@ -137,7 +137,7 @@ public class TaskRunner {
         task hull_task = new task();
         
         hull_task.addJarFile("HullComputer.jar");
-System.out.println("Debug!");
+System.out.println("1 Debug!");
 
         info = new AMInfo(hull_task, null);
 
@@ -153,8 +153,9 @@ System.out.println("Debug!");
 
             points[i] = info.createPoint();
             channels[i] = points[i].createChannel();
-System.out.println("Debug!");
+System.out.println("2 Debug!");
             points[i].execute("HullComputer");
+System.out.println("3 Debug!");
             channels[i].write(center_of_mass);
             channels[i].write(vertices_for_thread);
         }
