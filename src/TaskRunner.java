@@ -152,9 +152,9 @@ public class TaskRunner {
 
             points[i] = info.createPoint();
             channels[i] = points[i].createChannel();
-            points[i].execute("HullComputing");
-            channels[i].write(center_of_mass);
-            channels[i].write(vertices_for_thread);
+            // points[i].execute("HullComputing");
+            // channels[i].write(center_of_mass);
+            // channels[i].write(vertices_for_thread);
         }
 
         for (int i = 0; i < AMOUNT_OF_SECTORS; ++i) {
