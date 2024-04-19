@@ -85,8 +85,6 @@ public class TaskRunner {
         channels = new channel[NUM_OF_THREADS];
 
         for (int i = 0; i < NUM_OF_THREADS; i++) {
-            channels[i].write(center_of_mass);
-
             Vector<Vertex> vertices_for_thread = new Vector<Vertex>(AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING);
             
             for (int j = 0; j < AMOUNT_OF_POINTS_IN_ANGLE_COMPUTING; j++) {
@@ -96,6 +94,7 @@ public class TaskRunner {
             points[i] = info.createPoint();
             channels[i] = points[i].createChannel();
             points[i].execute("AngleComputer");
+            channels[i].write(center_of_mass);
             channels[i].write(vertices_for_thread);
         }
 
